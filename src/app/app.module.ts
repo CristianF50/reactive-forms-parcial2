@@ -14,6 +14,8 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 
 registerLocaleData(en);
@@ -32,7 +34,9 @@ registerLocaleData(en);
     NzGridModule,
     NzTypographyModule,
     NzFormModule,
-    NzInputModule
+    NzInputModule,
+    NzSelectModule,
+    NzButtonModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

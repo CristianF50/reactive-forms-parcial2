@@ -4,72 +4,115 @@
       <div nz-row nzJustify="center">
         <h1 nz-typography>Ticket de turno</h1>
       </div>
-      <form nz-form [formGroup]="ticketForma">
+      <form nz-form [formGroup]="ticketForma" (ngSubmit)="submitForm()">
         <div nz-row [nzGutter]="16">
           <div nz-col [nzSpan]="12">
-            <nz-form-item>
+            <nz-form-item nzErrorTip="Por favor, verifique el nombre">
               <nz-form-label nzFor="nombreTramite" nzRequired>Nombre de quien realizara el tramite </nz-form-label>
               <nz-form-control>
-                <input nz-input id="nombreTramite" placeholder="Nombre Completo" />
+                <input nz-input formControlName="nombreTramite" id="nombreTramite" placeholder="Nombre Completo" />
               </nz-form-control>
             </nz-form-item>
           </div>
           <div nz-col [nzSpan]="12">
             <nz-form-item>
               <nz-form-label nzFor="crup" nzRequired>CURP</nz-form-label>
-              <nz-form-control>
-                <input nz-input id="curp" placeholder="CURP" />
+              <nz-form-control nzErrorTip="Por favor, ingrese un curp valido">
+                <input nz-input formControlName="curp" id="curp" placeholder="CURP" />
               </nz-form-control>
             </nz-form-item>
           </div>
           <div nz-col [nzSpan]="8">
             <nz-form-item>
               <nz-form-label nzFor="nombre" nzRequired>Nombre</nz-form-label>
-              <nz-form-control>
-                <input nz-input id="nombre" placeholder="Nombre(s)" />
+              <nz-form-control nzErrorTip="Por favor, verifique su nombre(s)">
+                <input nz-input formControlName="nombre" id="nombre" placeholder="Nombre(s)" />
               </nz-form-control>
             </nz-form-item>
           </div>
           <div nz-col [nzSpan]="8">
             <nz-form-item>
               <nz-form-label nzFor="paterno" nzRequired>Paterno</nz-form-label>
-              <nz-form-control>
-                <input nz-input id="paterno" placeholder="Paterno" />
+              <nz-form-control nzErrorTip="Por favor, verifique su apellido paterno">
+                <input nz-input formControlName="paterno" id="paterno" placeholder="Paterno" />
               </nz-form-control>
             </nz-form-item>
           </div>
           <div nz-col [nzSpan]="8">
             <nz-form-item>
               <nz-form-label nzFor="materno" nzRequired>Materno</nz-form-label>
-              <nz-form-control>
-                <input nz-input id="materno" placeholder="Materno" />
+              <nz-form-control nzErrorTip="Por favor, verifique su apellido materno">
+                <input nz-input formControlName="materno" id="materno" placeholder="Materno" />
               </nz-form-control>
             </nz-form-item>
           </div>
           <div nz-col [nzSpan]="5">
             <nz-form-item>
               <nz-form-label nzFor="telefono" nzRequired>Telefono</nz-form-label>
-              <nz-form-control>
-                <input nz-input id="telefono" placeholder="8441111111" />
+              <nz-form-control nzErrorTip="Por favor, ingrese un número de telefono válido">
+                <input nz-input formControlName="telefono" id="telefono" placeholder="8441111111" />
               </nz-form-control>
             </nz-form-item>
           </div>
           <div nz-col [nzSpan]="5">
             <nz-form-item>
               <nz-form-label nzFor="celular" nzRequired>Celular</nz-form-label>
-              <nz-form-control>
-                <input nz-input id="celular" placeholder="Celular" />
+              <nz-form-control nzErrorTip="Por favor, ingrese un número de telefono válido">
+                <input nz-input formControlName="celular" id="celular" placeholder="Celular" />
               </nz-form-control>
             </nz-form-item>
           </div>
           <div nz-col [nzSpan]="14">
             <nz-form-item>
               <nz-form-label nzFor="correo" nzRequired>Correo</nz-form-label>
-              <nz-form-control>
-                <input nz-input id="correo" placeholder="Correo Electronico" />
+              <nz-form-control nzErrorTip="Por favor, ingrese un correo electronico válido">
+                <input nz-input formControlName="correo" id="correo" placeholder="Correo Electronico" />
               </nz-form-control>
             </nz-form-item>
           </div>
+          <div nz-col [nzSpan]="14">
+            <nz-form-item>
+              <nz-form-label nzFor="nivel" nzRequired>Nivel al que desea ingresar o ya esta cursando</nz-form-label>
+              <nz-form-control nzErrorTip="Por favor, seleccione un nivel">
+                <nz-select nzShowSearch nzAllowClear id="nivel" formControlName="nivel" nzPlaceHolder="Seleccione un Nivel" [(ngModel)]="selectedValue">
+                  <nz-option nzLabel="Nivel 1" nzValue="1"></nz-option>
+                  <nz-option nzLabel="Nivel 2" nzValue="2"></nz-option>
+                  <nz-option nzLabel="Nivel 3" nzValue="3"></nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="14">
+            <nz-form-item>
+              <nz-form-label nzFor="municipio" nzRequired>Municipio donde desea estudiar el alumno</nz-form-label>
+              <nz-form-control nzErrorTip="Por favor, seleccione un municipio">
+                <nz-select nzShowSearch nzAllowClear id="municipio" formControlName="municipio" nzPlaceHolder="Seleccione un municipio"
+                  [(ngModel)]="municipioValue">
+                  <nz-option nzLabel="Saltillo" nzValue="saltillo"></nz-option>
+                  <nz-option nzLabel="Arteaga" nzValue="arteaga"></nz-option>
+                  <nz-option nzLabel="Ramos Arizpe" nzValue="ramos"></nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="14">
+            <nz-form-item>
+              <nz-form-label nzFor="asunto" nzRequired>Seleccione el asunto que va a tratar</nz-form-label>
+              <nz-form-control nzErrorTip="Por favor, seleccione un asunto">
+                <nz-select nzShowSearch nzAllowClear id="asunto" formControlName="asunto" nzPlaceHolder="Seleccione un municipio"
+                  [(ngModel)]="asuntoValue">
+                  <nz-option nzLabel="Asunto 1" nzValue="1"></nz-option>
+                  <nz-option nzLabel="Asunto 2" nzValue="2"></nz-option>
+                  <nz-option nzLabel="Asunto 3" nzValue="3"></nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row nzJustify="center">
+          <nz-form-control>
+            <button nz-button [nzType]="'primary'">Generar Turno</button>
+          </nz-form-control>
         </div>
       </form>
     </nz-card>
