@@ -1,0 +1,13 @@
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.card-forma{
+    border-radius: 10px;
+    border-color: black;
+    border-width: 1px;
+}
+
+.ant-input{
+    border-radius: 10px;
+}

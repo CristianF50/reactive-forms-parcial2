@@ -1,4 +1,77 @@
-<!-- NG-ZORRO -->
-<a href="https://github.com/NG-ZORRO/ng-zorro-antd" target="_blank" style="display: flex;align-items: center;justify-content: center;height: 100%;width: 100%;">
-  <img height="300" src="https://img.alicdn.com/tfs/TB1X.qJJgHqK1RjSZFgXXa7JXXa-89-131.svg">
-</a>
+<div nz-row nzJustify="center" class="mt-1">
+  <div nz-col class="gutter-row" [nzSpan]="22">
+    <nz-card class="card-forma">
+      <div nz-row nzJustify="center">
+        <h1 nz-typography>Ticket de turno</h1>
+      </div>
+      <form nz-form [formGroup]="ticketForma">
+        <div nz-row [nzGutter]="16">
+          <div nz-col [nzSpan]="12">
+            <nz-form-item>
+              <nz-form-label nzFor="nombreTramite" nzRequired>Nombre de quien realizara el tramite </nz-form-label>
+              <nz-form-control>
+                <input nz-input id="nombreTramite" placeholder="Nombre Completo" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="12">
+            <nz-form-item>
+              <nz-form-label nzFor="crup" nzRequired>CURP</nz-form-label>
+              <nz-form-control>
+                <input nz-input id="curp" placeholder="CURP" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="8">
+            <nz-form-item>
+              <nz-form-label nzFor="nombre" nzRequired>Nombre</nz-form-label>
+              <nz-form-control>
+                <input nz-input id="nombre" placeholder="Nombre(s)" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="8">
+            <nz-form-item>
+              <nz-form-label nzFor="paterno" nzRequired>Paterno</nz-form-label>
+              <nz-form-control>
+                <input nz-input id="paterno" placeholder="Paterno" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="8">
+            <nz-form-item>
+              <nz-form-label nzFor="materno" nzRequired>Materno</nz-form-label>
+              <nz-form-control>
+                <input nz-input id="materno" placeholder="Materno" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="5">
+            <nz-form-item>
+              <nz-form-label nzFor="telefono" nzRequired>Telefono</nz-form-label>
+              <nz-form-control>
+                <input nz-input id="telefono" placeholder="8441111111" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="5">
+            <nz-form-item>
+              <nz-form-label nzFor="celular" nzRequired>Celular</nz-form-label>
+              <nz-form-control>
+                <input nz-input id="celular" placeholder="Celular" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="14">
+            <nz-form-item>
+              <nz-form-label nzFor="correo" nzRequired>Correo</nz-form-label>
+              <nz-form-control>
+                <input nz-input id="correo" placeholder="Correo Electronico" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+      </form>
+    </nz-card>
+  </div>
+</div>
